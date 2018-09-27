@@ -1,0 +1,116 @@
+¨*{
+    margin: 0 ;
+    padding: 0;
+}
+body{
+    /*background-color: rgb(88, 214, 14);*/
+    /* background-color: #33FF56; */
+    /*font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Courier New', Courier, monospace;
+    font-family: Georgia, 'Times New Roman', Times, serif;*/
+    font-family: 'Times New Roman', Times, serif;
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+ul{
+    list-style-type:none; 
+    padding: 0%; 
+    margin: 0;
+    margin-left: 10px; 
+}
+nav{
+    
+    min-width: 830px; /*dim minima de la barra de nav*/
+}
+
+
+
+.navBar{
+    margin-left: 0;
+}
+
+.niv1{
+    background-color: #056BFF;
+    /* background-image: linear-gradient(#056BFF, yellow); */
+    border: #056BFF;
+    border-style: outset;
+    display: block;
+    float: left;
+    font-size: 125%;
+    width: 15%;
+    margin: 0%;
+    /*border: 2px solid white;*/
+    /* text-align: left; */
+}
+
+
+
+/*iNICIO DEF ESTILO DEL MENU DESPEGABLE */
+nav>ul>li>ul{ /*Se ocultan todos los ul internos a los elementos li del lev1 */
+    display: none; 
+}
+ 
+nav>ul>li:hover{ /**/
+    background-color:#1ae84e;
+    cursor: default;
+}
+
+nav ul li:hover ul{ /*Se desplega ul internos al elemento li del lev1 */
+    display: block;
+    position: absolute;
+    background-color:#1ae84e; 
+    min-width:120px;
+    
+}
+
+nav ul li:hover ul li ul{ /*Se ocultan todos los ul internos a los elementos li del lev2 */
+    display: none;
+    /* background-color:#8AE840; */
+}
+nav ul li:hover ul li:hover{
+    background-color:#8AE840;
+}
+nav li:hover ul li:hover ul{
+    display: block;
+    position: absolute;
+    background-color:#8AE840; 
+    right:-120px;
+    /* right: -25%; */
+    top:0px;	
+}
+nav li:hover ul li:hover ul li ul{  /*Se ocultan todos los ul internos a los elementos li del lev2 */
+    display: none;
+}
+
+nav li:hover ul li:hover ul li:hover{
+    background-color: aliceblue;
+}
+
+nav li:hover ul li:hover ul li:hover ul{
+    display: block;
+    position: absolute;
+    background-color: aliceblue;
+
+}
+
+nav li:hover ul li:hover ul li:hover ul li:hover{
+    background-color: aqua;
+}
+/*TERMINA LA DEF ESTILO DEL MENU DESPEGABLE*/
+
+header{
+    background-image: url(../images/gaming-wallpaper.jpg);
+}
+
+
+.ofertas{
+    background-color: antiquewhite;
+}
+.prod1{
+    background-color: #19FFDA;
+}
+.prod2{
+    background-color: #65E8A7;
+}

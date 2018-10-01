@@ -20,8 +20,8 @@ ul{
     margin: 0;
     margin-left: 10px; 
 }
-nav{
-    
+
+nav{    
     min-width: 830px; /*dim minima de la barra de nav*/
 }
 
@@ -43,6 +43,10 @@ nav{
     margin: 0%;
     /*border: 2px solid white;*/
     /* text-align: left; */
+}
+
+.niv2{
+    position: relative;
 }
 
 
@@ -76,7 +80,7 @@ nav li:hover ul li:hover ul{
     display: block;
     position: absolute;
     background-color:#8AE840; 
-    right:-120px;
+    right:-173px;
     /* right: -25%; */
     top:0px;	
 }
@@ -101,7 +105,7 @@ nav li:hover ul li:hover ul li:hover ul li:hover{
 /*TERMINA LA DEF ESTILO DEL MENU DESPEGABLE*/
 
 header{
-    background-image: url(../images/gaming-wallpaper.jpg);
+    
 }
 
 

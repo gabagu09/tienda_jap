@@ -1,22 +1,39 @@
 
 .divNiv1{
     background-color: aquamarine;
-    height: 40%;
+    height: auto;
+   
     position: relative;
 }
 
 .divNiv2{
     background-color: red;
     width: 20%;
+    height: 298px;
     float: left; 
     margin: 2px;     
 }
 main{
 min-height: 800px;
-height: 720;
-width: 1000px;
+height: -webkit-fill-available;
+width: 100%;
 }
 
 main{
     position: relative;
+}
+
+img{
+    height: 60%;
+    width: 90%;
+    margin-top: 5%;
+    margin-left: 5%;
+}
+
+.filters{
+    float: left; 
+}
+
+.filtro{
+    float: inherit;
 }

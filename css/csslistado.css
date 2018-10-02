@@ -1,0 +1,22 @@
+
+.divNiv1{
+    background-color: aquamarine;
+    height: 40%;
+    position: relative;
+}
+
+.divNiv2{
+    background-color: red;
+    width: 20%;
+    float: left; 
+    margin: 2px;     
+}
+main{
+min-height: 800px;
+height: 720;
+width: 1000px;
+}
+
+main{
+    position: relative;
+}

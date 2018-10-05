@@ -2,8 +2,14 @@
 form{
  background-color: blue;
  border: #056BFF;
-text-align: center;
+ text-align: center;
+ width: 70%;
 }
+/* .cosa{
+    width: 33%;
+    position: relative;
+    float: left;
+} */
 
 input[type=text], select {
     width: 10%;
@@ -31,7 +37,7 @@ input[type=submit]:hover {
 
 }
 
-input[type=text]{
+input[type=text], input[type=email], input[type=password], textarea {
     width: 20%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -42,8 +48,8 @@ input[type=text]{
   
 }
 
-div {
+/* div {
     border-radius: 5px;
     background-color: #f2f2f2;
     padding: 20px;
-}
+} */

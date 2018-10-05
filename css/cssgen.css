@@ -1,5 +1,8 @@
-¨*{
+*{
     margin: 0 ;
+
+    box-sizing: border-box;
+
     padding: 0;
 }
 body{
@@ -105,7 +108,8 @@ nav li:hover ul li:hover ul li:hover ul li:hover{
 /*TERMINA LA DEF ESTILO DEL MENU DESPEGABLE*/
 
 header{
-    
+    display: flex;
+    flex-direction: column;
 }
 
 
@@ -119,7 +123,14 @@ header{
     background-color: #65E8A7;
 }
 
+
+main{
+    width: 100%;
+    /* height:auto; */
+    background-color: darkcyan;
+    justify-content: center;
+}
+
 footer{
-    margin-top: 10%;
-    margin-right: 30%;
+    border: 2px solid red;
 }

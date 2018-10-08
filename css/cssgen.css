@@ -50,11 +50,11 @@ nav{
 
 
 /*iNICIO DEF ESTILO DEL MENU DESPEGABLE */
-nav>ul>li>ul{ /*Se ocultan todos los ul internos a los elementos li del lev1 */
+nav ul li ul{ /*Se ocultan todos los ul internos a los elementos li del lev1 */
     display: none; 
 }
  
-nav>ul>li:hover{ /**/
+nav ul li:hover{ /**/
     background-color:#1ae84e;
     cursor: default;
 }
@@ -128,4 +128,7 @@ main{
 
 footer{
     border: 2px solid red;
+}
+a{
+    text-decoration: none;
 }

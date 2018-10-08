@@ -39,5 +39,7 @@ img{
 }
 
 .filtro{
-    float: inherit;
+    float: left;
+    width: 100%;
 }
+

@@ -1,14 +1,14 @@
 
-.divNiv1{
+/* .divNiv1{
     background-color: aquamarine;
     box-sizing: border-box;
     width: 100%;
     height: auto;
     position: relative;
-}
+} */
 
 .divNiv2{
-    background-color: red;
+    background-color: rgb(72, 255, 209);
     box-sizing: border-box;
     width: 20%;
     height: auto;

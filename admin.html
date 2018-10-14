@@ -11,7 +11,7 @@
     <a href="index.html">Sitio</a>
     
     <main>
-        <form>
+        <form id="formAdminAlta">
             <fieldset>
                 <legend>Cargar Juego</legend>
                 <label for="namegame">Titulo del juego:</label>
@@ -20,11 +20,20 @@
                 <label for="imgport">Imagen de portada:</label>
                 <input type="file" name="imgport" id="imgport" accept="image/*"required >
                 <br><br>
-                <label for="section">Seccion:</label>
-                <select id="sectin" name="section" required>
-                    <option>s1</option>
-                    <option selected>s2</option>
-                    <option>s3</option>
+                <label for="cat">Categoria:</label>
+                <select id="cat" name="cat" required>
+                    <option>Action</option>
+                    <option selected>Adventure</option>
+                    <option>Sports &amp; Racing</option>
+                    <option>RPG</option>
+                    <option>Shooters</option>
+                    <option>Simulation</option>
+                    <option>Strategy</option>
+                    <option>Antivirus y seguridad</option>
+                    <option>Herramientas</option>
+                    <option>Oficina</option>
+                    <option>Multimedia</option>
+                    <option>Otros</option>
                 </select>
                 <br> <br>
                 <label for="description">Descripcion:</label> <br>
@@ -39,6 +48,7 @@
                 <input type="submit" value="cargar producto">
             </fieldset>
         </form>   
+        <script src="js/jsAltaProd.js"></script>
     </main>
     
     

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/cssgen.css" type="text/css">
+    <link rel="stylesheet" href="css/cssformcompra.css" type="text/css">
+
+    <title>Comprar</title>
+</head>
+<body>
+    <header> <!--Cabecera de la pag -->
+        <nav>
+            <ul class="navBar">
+                <a href="index.html"><li class="niv1"> Main page.</li></a>
+                <li class="niv1"> <a href="games.html"> Store </a>
+                        <ul>
+                            <li>Promociones</li>
+                            <li>Action</li>
+                            <li>Adventure</li>
+                            <li>Sports &amp; Racing</li>
+                            <li>RPG</li>
+                            <li>Shooters</li>
+                            <li>Simulation</li>
+                            <li>Strategy</li>
+                            <li class="niv2">Software
+                                <ul>
+                                    <li>Antivirus y seguridad</li>
+                                    <li>Herramientas </li>
+                                    <li>Oficina</li>
+                                    <li>Multimedia</li>
+                                    <li>Otros</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                
+                <li class="niv1">Community
+                    
+                </li>
+
+                <li class="niv1">Support 
+                    <ul>
+                        <li><a href="q&amp;c.html">Q&amp;C</a></li>
+                    </ul>
+
+                </li>
+                <li class="niv1"> Sign In
+                    <ul>
+                        <li><a href="sign-in.html" title="Registro">Sign In</a></li>
+                        <li><a href="sign-up.html" title="Registro">Sign Up</a></li>
+                    </ul>
+                </li>
+            
+            </ul>
+        </nav>
+            
+        <h1> <a href="index.html">a@f#sd#sd</a></h1>   
+    </header>
+<hr>
+    <main class="mainCont">
+        <div class="infoGameCompra">
+            <p>nombre</p>
+            <p>genero</p>
+            <p>valor</p>
+            <p>descuento</p>
+        </div>
+        <div class="datosCompra">
+            <form action="">
+                <label for="cantItems">Cantidad:</label>
+                <input type="number" id="cantItems" min="0" required>
+                <br>
+                <label for="formatoGame">Formato :</label> 
+                <select name="formatoGame" id="formatoGame">
+                    <option>CD/DVD</option>
+                    <option selected>Digital</option>
+                </select>
+                <fieldset  class="datosEnvio">
+                    <legend>Datos del envio</legend>
+                    <label for="dirEnvio">Direccion de Envio:</label>
+                    <input type="text" name="dirEnvio" id="dirEnvio">
+                    <br>
+                    <label for="dirEnvio">Tipo de Envio:</label>
+                    <select name="tipoEnvio" id="tipoEnvio">
+                        <option selected>comun</option>
+                        <option>especial</option>
+                        <option>premium</option>
+                    </select>
+                </fieldset>
+                <output> valor +iva +envio</output>
+                <button class="cancelar">Cancelar</button>
+                <input type="submit" value="Comprar">
+
+            </form>
+        </div>
+    </main>
+<hr>    
+    <!--El Pie de pagina-->
+    <footer> 
+        <h4>By yo</h4>
+        
+
+        <a href="admin.html">Admin</a>
+    </footer>
+    
+</body>
+</html>

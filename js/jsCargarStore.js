@@ -10,7 +10,8 @@ var pNameGame = document.createElement('p');
 var pPrecioGame = document.createElement('p');
 var pDescGame = document.createElement('p');
 var pCompGame = document.createElement('p');
-
+var butCompra = document.createElement('button');
+butCompra.className="butCompra";
 function obtener_localStorage(clave) {
 	var l = localStorage.getItem(clave);
 	if(l == null) {
@@ -45,5 +46,15 @@ for(i=0 ; i<listaJuegos.length ; i++){
         clonpDescGame.textContent ="-" + listaJuegos[i].descuento + "%";
         clonDivInfoGame.appendChild(clonpDescGame);
     }
+    var clonButCompra =  butCompra.cloneNode();
+    clonButCompra.textContent ="Comprar";
+    clonButCompra.value = i;
+    clonDivInfoGame.appendChild(clonButCompra);
     
+}
+
+
+butCompra.onclick = function(){
+    var lugarprod = button.value;
+
 }

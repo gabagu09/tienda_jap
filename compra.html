@@ -70,14 +70,14 @@
         <div class="datosCompra">
             <form action="" method="POST">
                 <label for="cantItems">Cantidad:</label>
-                <input type="number" id="cantItems" min="0">
+                <input type="number" id="cantItems" min="1" >
                 <br>
                 <label for="formatoGame">Formato :</label> 
                 <select name="formatoGame" id="formatoGame">
                     <option>CD/DVD</option>
                     <option selected>Digital</option>
                 </select>
-                <fieldset  class="datosEnvio">
+                <fieldset  class="datosEnvio"> 
                     <legend>Datos del envio</legend>
                     <label for="dirEnvio">Direccion de Envio:</label>
                     <input type="text" name="dirEnvio" id="dirEnvio">
@@ -89,6 +89,7 @@
                         <option>premium</option>
                     </select>
                 </fieldset>
+                <br>
                 <output> valor +iva +envio</output>
                 <button class="cancelar">Cancelar</button>
                 <input type="submit" value="Comprar">

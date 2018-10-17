@@ -26,7 +26,7 @@ if (compra.length != 0){
 	infoGameCompra.appendChild(pNameGame);
 	pPrecioGame.textContent = "$" + compra[compra.length-1].precio;
 	infoGameCompra.appendChild(pPrecioGame);
-	if (compra[0].descuento !== 0){
+	if (compra[compra.length-1].descuento !== 0){
     	pDescGame.textContent = "-"+ compra[compra.length-1].descuento+"%";
     	infoGameCompra.appendChild(pDescGame);
 	}
@@ -44,3 +44,13 @@ cancelar.onclick = function (){
 	document.location.href= "games.html";
 }
 
+var formatoGame = document.querySelector('#formatoGame');
+var datosEnvio = document.querySelector('.datosEnvio');
+formatoGame.onchange = function(){
+	if (formatoGame.value == "CD/DVD"){
+		datosEnvio.style.display = "block";
+	}
+	else{
+		datosEnvio.style.display = "none" ;
+	}
+}

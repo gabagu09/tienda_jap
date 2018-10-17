@@ -18,3 +18,7 @@
 .datosEnvio{
     border: 5px solid yellow;
 }
+
+.datosEnvio{
+    display: none;
+}

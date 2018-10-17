@@ -32,7 +32,7 @@ for(i=0 ; i<listaJuegos.length ; i++){
     var clonpPrecioGame =  pPrecioGame.cloneNode();
     clonpPrecioGame.textContent ="$" + listaJuegos[i].precio;
     clonDivInfoGame.appendChild(clonpPrecioGame);
-    if (listaJuegos[i].descuento !== 0){
+    if ((listaJuegos[i].descuento !== 0) && (listaJuegos[i].descuento !== "0") ){
         var clonpDescGame =  pDescGame.cloneNode();
         clonpDescGame.textContent ="-" + listaJuegos[i].descuento + "%";
         clonDivInfoGame.appendChild(clonpDescGame);

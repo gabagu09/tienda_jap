@@ -10,7 +10,8 @@
     <title>Comprar</title>
 </head>
 <body>
-    <header> <!--Cabecera de la pag -->
+    <!--Cabecera de la pag -->
+     <header>  
         <nav>
             <ul class="navBar">
                 <a href="index.html"><li class="niv1"> Main page.</li></a>
@@ -57,19 +58,19 @@
         </nav>
             
         <h1> <a href="index.html">a@f#sd#sd</a></h1>   
-    </header>
+    </header> 
 <hr>
     <main class="mainCont">
         <div class="infoGameCompra">
-            <p>nombre</p>
+            <!-- <p>nombre</p>
             <p>genero</p>
             <p>valor</p>
-            <p>descuento</p>
+            <p>descuento</p> -->
         </div>
         <div class="datosCompra">
-            <form action="">
+            <form action="" method="POST">
                 <label for="cantItems">Cantidad:</label>
-                <input type="number" id="cantItems" min="0" required>
+                <input type="number" id="cantItems" min="0">
                 <br>
                 <label for="formatoGame">Formato :</label> 
                 <select name="formatoGame" id="formatoGame">
@@ -91,9 +92,9 @@
                 <output> valor +iva +envio</output>
                 <button class="cancelar">Cancelar</button>
                 <input type="submit" value="Comprar">
-
             </form>
         </div>
+        <script src="js/jsCompra.js"></script>
     </main>
 <hr>    
     <!--El Pie de pagina-->

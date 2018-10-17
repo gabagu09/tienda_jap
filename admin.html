@@ -5,11 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>administrador</title>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+        </style>
 </head>
 <body>
     <h1>Administrador</h1>
     <a href="index.html">Sitio</a>
-    
+    <nav>
+        <ul>
+            <li>Productos</li>
+            <li>Usuarios</li>
+        </ul>
+    </nav>
+
     <main>
         <form id="formAdminAlta">
             <fieldset>
@@ -18,7 +41,7 @@
                 <input type="text" id="namegame" name="namegame" required>
                 <br><br>
                 <label for="imgport">Imagen de portada:</label>
-                <input type="file" name="imgport" id="imgport" accept="image/*"required >
+                <input type="file" name="imgport" id="imgport" accept="image/*" >
                 <br><br>
                 <label for="cat">Categoria:</label>
                 <select id="cat" name="cat" required>
@@ -51,6 +74,12 @@
                 <input type="submit" value="cargar producto">
             </fieldset>
         </form>   
+        
+
+        <table>
+            <tr><th>Nombre </th> <th>Categoria </th> <th>Precio</th> <th>Descuento </th>  <th>modificar</th></tr>
+        </table>
+
         <script src="js/jsAltaProd.js"></script>
     </main>
     

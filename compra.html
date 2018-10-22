@@ -70,18 +70,19 @@
         <div class="datosCompra">
             <form action="" method="POST">
                 <label for="cantItems">Cantidad:</label>
-                <input type="number" id="cantItems" min="1" >
-                <br>
+                <input type="number" id="cantItems" min="1" value="1" >
+                <!-- <br> -->
                 <label for="formatoGame">Formato :</label> 
                 <select name="formatoGame" id="formatoGame">
                     <option>CD/DVD</option>
                     <option selected>Digital</option>
                 </select>
+                <!-- <br>  -->
                 <fieldset  class="datosEnvio"> 
                     <legend>Datos del envio</legend>
                     <label for="dirEnvio">Direccion de Envio:</label>
                     <input type="text" name="dirEnvio" id="dirEnvio">
-                    <br>
+                    <!-- <br> -->
                     <label for="dirEnvio">Tipo de Envio:</label>
                     <select name="tipoEnvio" id="tipoEnvio">
                         <option selected>comun</option>
@@ -90,11 +91,27 @@
                     </select>
                 </fieldset>
                 <br>
-                <output> valor +iva +envio</output>
+                <label for="formaPago">Forma de Pago :</label>
+                <select name="formaPago" id="formaPago">
+                    <option>Debito</option>
+                    <option selected>Credito</option>
+                    <option selected>Red de Cobranza</option>
+                </select>
+                <br>
+                <!-- <output class="costos"> </output> -->
+                <div class="infoCostos">
+                    <!-- <p>Costo + Envio</p>
+                    <p>Costo + Envio + Impuestos</p>
+                    <p>Costo Final</p> -->
+                </div>
+                <br>
                 <button class="cancelar">Cancelar</button>
                 <input type="submit" value="Comprar">
             </form>
+
+
         </div>
+        
         <script src="js/jsCompra.js"></script>
     </main>
 <hr>    

@@ -39,13 +39,15 @@
             <fieldset>
                 <legend>Cargar Juego</legend>
                 <label for="namegame">Titulo del juego:</label>
-                <input type="text" id="namegame" name="namegame" required>
+                <input type="text" id="namegame" name="namegame" required value="ghsd">
                 <br><br>
                 <label for="imgport">Imagen de portada:</label>
-                <input type="file" name="imgport" id="imgport" accept="image/*" >
+                <input type="file" name="imgport" id="imgport" accept="image/*" required>
+                <div id="imgTest"></div> 
+
                 <br><br>
                 <label for="cat">Categoria:</label>
-                <select id="cat" name="cat" required>
+                <select id="cat" name="cat" >
                     <option>Action</option>
                     <option selected>Adventure</option>
                     <option>Sports &amp; Racing</option>
@@ -61,10 +63,10 @@
                 </select>
                 <br> <br>
                 <label for="description">Descripcion:</label> <br>
-                <textarea cols="30" rows="10" id="description" required></textarea>
+                <textarea cols="30" rows="10" id="description" ></textarea>
                 <br> <br>
                 <label for="valor">Precio:</label>
-                <input type="number" id="valor" min="0">
+                <input type="number" id="valor" min="0" value="32">
                 <br> <br>
                 <label for="decuento">descuento:</label>
                 <input type="number" id="descuento" min="0" max="100" placeholder=0>
@@ -75,7 +77,8 @@
                 <input type="submit" value="cargar producto">
             </fieldset>
         </form>   
-        
+        <img src="" height="200" alt="Image preview...">
+
 
         <table>
             <tr><th>Nombre </th> <th>Categoria </th> <th>Precio</th> <th>Descuento </th>  <th>modificar</th></tr>

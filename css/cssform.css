@@ -2,17 +2,18 @@
 form{
  /* background-color: #5FE8B8; */
  /* border: 4px solid green; */
- text-align: center;
- width: 90%;
+ /* text-align: center; */
+ /* width: 90%; */
+ justify-content: center;
 }
 .contForm{
-    width: 100%;
+    /* width: 80%; */
     display: flex;
     justify-content: center;
 }
 
 input[type=text], select {
-    width: 10%;
+    /* width: 10%; */
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
@@ -22,7 +23,7 @@ input[type=text], select {
 }
 
 input[type=submit] {
-    width: 10%;
+    /* width: 10%; */
     background-color: #4CAF50;
     color: white;
     padding: 14px 20px;
@@ -38,7 +39,7 @@ input[type=submit]:hover {
 }
 
 input[type=text], input[type=email], input[type=password], textarea {
-    width: 20%;
+    /* width: 20%; */
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;

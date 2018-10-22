@@ -2,24 +2,70 @@
  /* Recibir los datos del formuladrio de alta de productos y guardarlos en el local storage*/
 var form = document.querySelector('#formAdminAlta');
 
+var cargimg = document.querySelector('#imgport');
+
+// cargimg.onchange = function() {
+//     var preview = document.querySelector('img');
+//     var file    = document.querySelector('input[type=file]').files[0];
+//     var reader  = new FileReader();
+//     var srcData;
+//     reader.addEventListener("load", function () {
+//         preview.src = reader.result;
+//         srcData = reader.result;
+//         alert("GHDSFKHG" + srcData);  
+//     }, false);
+  
+//     if (file) {
+//       reader.readAsDataURL(file);
+//     }
+
+//     var lista = obtener_localStorage("listaImg"); 
+//     // agrego el juego que cree anteriormente a la lista
+//     lista.push(srcData);
+//     // guardo en el local storage el nuevo juego agregado a la lista 
+//     guardar_localStorage(lista, "listaImg");   
+//   }
+
+//   var srcData = previewFile();
+
+
 form.onsubmit = function altajuego(){ 
     var nombre = document.getElementById('namegame').value;
-    var dirImg = document.getElementById('imgport').value;
+    // var dirImg = document.getElementById('imgport');
     var cat = document.getElementById('cat').value;
     var descr = document.getElementById('description').value;
     var precio =document.getElementById('valor').value;
     var desc = document.getElementById('descuento').value;
     if(desc == ""){
         desc = 0;
-    }
+    }//AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+   
+    // var filesSelected = document.getElementById("imgport").files;
+    // if (filesSelected.length > 0){
+    //     var fileToLoad = filesSelected[0];
+    //     var fileReader = new FileReader();
+    //     var srcData;
+        
+    //     fileReader.onload = function(e) {
+    //         alert(" pasa por aca esta mierda  1 " + srcData )
+    //         srcData = e.target.result; // <--- data: base64
+    //         alert(" pasa por aca esta mierda  1 " + srcData );
+    //     }
+    //     fileReader.readAsDataURL(fileToLoad);
+    //     alert(" pasa por aca esta mierda  2 " + srcData );
+    // }
+    // alert(" pasa por aca esta mIERDA 3 " + srcData ); 
+    //BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB
+    // var srcData = previewFile();
     var juego={  // Cereo el objeto juego y le inicializo todos sus atributos 
         name : nombre,
-        img :dirImg,
+        // img : srcData,
         categoria : cat,
-        descicion : descr,
+        descripcion : descr,
         precio :precio,
         descuento : desc
     };
+    // alert(" pasa por aca esta mierda  4 " + srcData );
     //obtengo "listaJuegos" del local Storage
     var lista = obtener_localStorage("listaJuegos"); 
     // agrego el juego que cree anteriormente a la lista
@@ -28,6 +74,11 @@ form.onsubmit = function altajuego(){
     guardar_localStorage(lista, "listaJuegos");   
       
 }
+// CCCCCCCCCCCCCCCCCCCCCCCCCCc
+
+
+
+
 
 /* FIN Recibir los datos del formuladrio de alta de productos y guardarlos en el local storage*/
 

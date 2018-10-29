@@ -4,27 +4,27 @@ var form = document.querySelector('#formAdminAlta');
 
 var cargimg = document.querySelector('#imgport');
 
-// cargimg.onchange = function() {
-//     var preview = document.querySelector('img');
-//     var file    = document.querySelector('input[type=file]').files[0];
-//     var reader  = new FileReader();
-//     var srcData;
-//     reader.addEventListener("load", function () {
-//         preview.src = reader.result;
-//         srcData = reader.result;
-//         alert("GHDSFKHG" + srcData);  
-//     }, false);
+cargimg.onchange = function() {
+    var preview = document.querySelector('img');
+    var file    = document.querySelector('input[type=file]').files[0];
+    var reader  = new FileReader();
+    var srcData;
+    reader.addEventListener("load", function () {
+        preview.src = reader.result;
+        srcData = reader.result;
+        alert("GHDSFKHG" + srcData);  
+    }, false);
   
-//     if (file) {
-//       reader.readAsDataURL(file);
-//     }
+    if (file) {
+      reader.readAsDataURL(file);
+    }
 
-//     var lista = obtener_localStorage("listaImg"); 
-//     // agrego el juego que cree anteriormente a la lista
-//     lista.push(srcData);
-//     // guardo en el local storage el nuevo juego agregado a la lista 
-//     guardar_localStorage(lista, "listaImg");   
-//   }
+    var lista = obtener_localStorage("listaImg"); 
+    // agrego el juego que cree anteriormente a la lista
+    lista.push(srcData);
+    // guardo en el local storage el nuevo juego agregado a la lista 
+    guardar_localStorage(lista, "listaImg");   
+  }
 
 //   var srcData = previewFile();
 

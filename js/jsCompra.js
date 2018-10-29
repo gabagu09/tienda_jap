@@ -1,7 +1,3 @@
-var infoGameCompra = document.querySelector('.infoGameCompra');
-var pNameGame = document.createElement('p');
-var pPrecioGame = document.createElement('p');
-var pDescGame = document.createElement('p');
 
 //LOCAL STORAGE
 // Recibo la "lista" que quiero gurdar en el local storage y el "nombre" con el que voy a guardar
@@ -18,28 +14,34 @@ function obtener_localStorage(clave) {
 	}
 	return lista;
 }
-// Fin LOCAL STORAGE
+// Fin LOCAL STORAGE ds
+
+//Cargar los datos del producto que voy a Comprar
+
+var infoGameCompra = document.querySelector('.infoGameCompra');
+var pNameGame = document.createElement('p');
+// var pPrecioGame = document.createElement('p');
+var pDescGame = document.createElement('p');
 
 var compra = obtener_localStorage("compra");
 var listaJuegos = obtener_localStorage("listaJuegos");
 if (compra.length != 0){
-	pNameGame.textContent = listaJuegos[compra[0]].name;
+	pNameGame.textContent = "Titulo: "+ " " + listaJuegos[compra[0]].name;
 	infoGameCompra.appendChild(pNameGame);
-	pPrecioGame.textContent = "$" + listaJuegos[compra[0]].precio;
-	infoGameCompra.appendChild(pPrecioGame);
+	// pPrecioGame.textContent = "Valor: "+ " " +"$" + listaJuegos[compra[0]].precio;
+	// infoGameCompra.appendChild(pPrecioGame);
 	if (listaJuegos[compra[0]].descuento !== 0){
-    	pDescGame.textContent = "-"+ listaJuegos[compra[0]].descuento+"%";
+    	pDescGame.textContent = "El SUPER Descuento "+"-"+ listaJuegos[compra[0]].descuento+"%";
     	infoGameCompra.appendChild(pDescGame);
 	}
-	
-	// pMasIVA.textContent = Number(compra[compra.length-1].precio) + (Number(compra[compra.length-1].precio) * 0,22);
-	// infoGameCompra.appendChild(pMasIVA);
 }
 else{
 	var mensaje = document.createElement('p');
-	mensaje.textContent = "su compra fue cancelada";
+	mensaje.textContent = "Su compra fue cancelada con exito";
 	infoGameCompra.appendChild(mensaje);
 }
+
+// FIN Cargar los datos del producto que voy a Comprar
 
 
 var cancelar = document.querySelector('.cancelar');
@@ -47,6 +49,24 @@ cancelar.onclick = function (){
 	localStorage.removeItem('compra');
 	document.location.href= "games.html";
 }
+
+var pPrecioGame = document.createElement('p');
+var inputCantJuegos = document.querySelector('#cantItems');
+var cantJuegos = inputCantJuegos.value;
+var preSumaItems = Number(listaJuegos[compra[0]].precio) * cantJuegos;
+pPrecioGame.textContent = "Valor: "+ " " +"$" + preSumaItems;
+infoGameCompra.appendChild(pPrecioGame);
+
+// onkeyup
+inputCantJuegos.onchange = function(){
+	cantJuegos = inputCantJuegos.value;
+	preSumaItems = Number(listaJuegos[compra[0]].precio) * cantJuegos;
+	pPrecioGame.textContent = "Valor: "+ " " +"$" + preSumaItems;
+	
+}
+
+
+
 
 var infoCostos = document.querySelector('.infoCostos');
 var pConEnv = document.createElement('p');
@@ -56,9 +76,8 @@ var datosEnvio = document.querySelector('.datosEnvio');
 formatoGame.onchange = function(){
 	if (formatoGame.value == "CD/DVD"){
 		datosEnvio.style.display = "block";
-		// conEnv = (Number(compra[compra.length-1].precio) + (Number(compra[compra.length-1].precio) * (0.5 /100)))
-		// pConEnv.textContent = "Precio+  Envio=  $" + conEnv;
-		// infoCostos.appendChild(pConEnv);
+		var dirEnv = document.querySelector('#dirEnvio');
+		dirEnv.setAttribute("required", true);
 	}
 	else{
 		datosEnvio.style.display = "none" ;

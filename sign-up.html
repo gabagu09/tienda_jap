@@ -61,6 +61,7 @@
     </header>
     <hr>
     <main>
+
         <div class="contForm">
             <form id="formSignUp">
                 
@@ -75,14 +76,17 @@
                 <input type="email" name="mail" id="mail" required>
                 <br><br>
                 <label for="pass">Contraseña: *</label><br>
-                <input type="password" name="pass" id="pass" required>
+                <input type="password" name="pass" id="pass" required maxlength="24" minlength="8">
                 <br><br>
                 <label for="passconf">Confirmar Contraseña: *</label><br>
-                <input type="password" name="passconf" id="passconf" required>
+                <input type="password" name="passconf" id="passconf" required maxlength="24" minlength="8">
                 <br><br>
-                <input type="submit" value="Registrarme">
+                <input type="submit" id="submit" value="Registrarme">
             </form>
         </div>
+        <script src="js/jcvalidacionform.js"></script>
+
+
     </main>
     <hr>
     <footer>

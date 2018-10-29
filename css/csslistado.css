@@ -11,8 +11,8 @@
     background-color: rgb(72, 255, 209);
     box-sizing: border-box;
     width: 20%;
-    height: auto;
-    float: left; 
+    height: 350px;
+    /* float: left;  */
     margin: 5px;     
 }
 
@@ -25,10 +25,16 @@
     border: 2px solid red;
 } */
 
+.infoGameStore{
+    height: 30%;
+    width: 90%;
+    margin-top: 5%;
+    margin-left: 5%;
+}
 
 
 img{
-    height: 60%;
+    height: 50%;
     width: 90%;
     margin-top: 5%;
     margin-left: 5%;

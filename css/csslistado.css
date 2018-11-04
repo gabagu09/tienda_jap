@@ -16,6 +16,11 @@
     margin: 5px;     
 }
 
+.divNiv2:hover{
+    background-color: rgb(39, 207, 165);
+    border-style: outset;
+}
+
 .ctnMain{
     display: flex;
     flex-flow: wrap;

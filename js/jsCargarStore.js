@@ -12,7 +12,6 @@ var pDescGame = document.createElement('p');
 var butCompra = document.createElement('button');
 butCompra.className="butCompra";
 
-
 var listaJuegos = obtener_localStorage("listaJuegos");
 var i;
 for(i=0 ; i<listaJuegos.length ; i++){
@@ -87,4 +86,4 @@ function obtener_localStorage(clave) {
 function borrar_localStorage(clave){
     localStorage.removeItem(clave);
 }
-//xzcxzvcxvcx
+//hsahsadhksadjsadjhsadjhasdjvacaljnadsjbksa

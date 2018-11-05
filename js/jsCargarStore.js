@@ -87,3 +87,4 @@ function obtener_localStorage(clave) {
 function borrar_localStorage(clave){
     localStorage.removeItem(clave);
 }
+//xzcxzvcxvcx

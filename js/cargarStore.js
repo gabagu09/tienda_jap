@@ -137,6 +137,7 @@ promociones.onclick = function(){
             clonDivInfoGame.appendChild(clonButCompra);   
         }
     }
+    capturarBtnComprar();
 }
 
 action.onclick = function(){
@@ -204,7 +205,51 @@ function mostrarCategoria(cat){
             clonDivInfoGame.appendChild(clonButCompra);   
         }
     }
+    capturarBtnComprar();
 }
 
+
+// Captura el evento clic en el boton 'comprar' de elgun juego de la store
+function capturarBtnComprar(){
+    var botones = document.querySelectorAll(".butCompra");
+    for (var x = 0; x < botones.length; x++) {
+        botones[x].onclick = function() {
+            // window.alert(this.id);
+            var posItem = this.id;
+            // window.alert(posItem);
+            // listaJuegos = obtener_localStorage("listaJuegos");
+            var compra = obtener_localStorage("compra");
+            if (compra != null){
+                compra = borrar_localStorage('compra');
+                compra = obtener_localStorage('compra');
+            }
+            compra.push(posItem);
+            guardar_localStorage(compra, "compra");
+            document.location.href= "compra.html";
+        }
+    }
+}
+
+capturarBtnComprar();
+
+//LOCAL STORAGE
+// Recibo la "lista" que quiero gurdar en el local storage y el "nombre" con el que voy a guardar
+function guardar_localStorage(lista, nombre) {
+	localStorage.setItem(nombre, JSON.stringify(lista));
+}
+//
+function obtener_localStorage(clave) {
+	var l = localStorage.getItem(clave);
+	if(l == null) {
+		lista = [];
+	}else{
+		lista = JSON.parse(l);
+	}
+	return lista;
+}
+
+function borrar_localStorage(clave){
+    localStorage.removeItem(clave);
+}
 
 

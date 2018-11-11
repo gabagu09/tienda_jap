@@ -1,62 +1,4 @@
-
-var juegos = [ 
-    {   "name": "gtaV",
-        "img": "image/gta-portada.jpg",
-        "precio" : "12",
-        "descuento" : "10",
-        "descripcion": "ajdkdgfkd",
-        "categoria": "action",
-        "imgExtra" : []
-    },
-    {   "name": "Fornite",
-        "img": "image/Fornite.jpg",
-        "precio" : "12",
-        "descuento" : "10",
-        "descripcion": "ajdkdgfkd",
-        "categoria": "action",
-        "imgExtra" : []
-    },
-    {   "name": "Minecraft",
-        "img": "image/minecraft.jpg",
-        "precio" : "12",
-        "descuento" : "10",
-        "descripcion": "ajdkdgfkd",
-        "categoria": "adventure",
-        "imgExtra" : []
-    },
-    {   "name": "Fifa 19",
-        "img": "image/Fifa19.jpg",
-        "precio" : "12",
-        "descuento" : "10",
-        "descripcion": "ajdkdgfkd",
-        "categoria": "sports",
-        "imgExtra" : []
-    },
-    {   "name": "Pes 19",
-        "img": "image/Pes19.jpg",
-        "precio" : "12",
-        "descuento" : "10",
-        "descripcion": "ajdkdgfkd",
-        "categoria": "sports",
-        "imgExtra" : []
-    }, 
-    {   "name": "The Forest",
-        "img": "image/TheForest.jpg",
-        "precio" : "12",
-        "descuento" : "0",
-        "descripcion": "ajdkdgfkd",
-        "categoria": "adventure",
-        "imgExtra" : []
-    },
-    {   "name": "The Witcher 3",
-        "img": "image/theWitcher3.jpg",
-        "precio" : "12",
-        "descuento" : "0",
-        "descripcion": "ajdkdgfkd",
-        "categoria": "rpg",
-        "imgExtra" : []
-    },
-]
+var juegos = dataJuegos;
 
 // Defino las variables de todos lo que debo crear para mostrar el juego
 var contenedor = document.querySelector('.ctnMain');
@@ -71,19 +13,19 @@ var pDescGame = document.createElement('p');
 var butCompra = document.createElement('button');
 butCompra.className="butCompra";
 
-
+//La primera vez que cargo store muestro todos los juegos
 for( var i=0 ; i<juegos.length ; i++){
     var clonDivGame = divGame.cloneNode();
     contenedor.appendChild(clonDivGame);
     var clonImgGame = imgGame.cloneNode();
-    clonImgGame.src = juegos[i].img;
+    clonImgGame.src = juegos[i].imagen;
     clonDivGame.appendChild(clonImgGame);
  
     var clonDivInfoGame = divInfoGame.cloneNode();
     clonDivGame.appendChild(clonDivInfoGame);
 
     var clonpNameGame =  pNameGame.cloneNode();
-    clonpNameGame.textContent = juegos[i].name;
+    clonpNameGame.textContent = juegos[i].titulo;
     clonDivInfoGame.appendChild(clonpNameGame);
     var clonpPrecioGame =  pPrecioGame.cloneNode();
     clonpPrecioGame.textContent ="$" + juegos[i].precio;
@@ -114,14 +56,14 @@ promociones.onclick = function(){
             var clonDivGame = divGame.cloneNode();
             contenedor.appendChild(clonDivGame);
             var clonImgGame = imgGame.cloneNode();
-            clonImgGame.src = juegos[i].img;
+            clonImgGame.src = juegos[i].imagen;
             clonDivGame.appendChild(clonImgGame);
         
             var clonDivInfoGame = divInfoGame.cloneNode();
             clonDivGame.appendChild(clonDivInfoGame);
         
             var clonpNameGame =  pNameGame.cloneNode();
-            clonpNameGame.textContent = juegos[i].name;
+            clonpNameGame.textContent = juegos[i].titulo;
             clonDivInfoGame.appendChild(clonpNameGame);
             var clonpPrecioGame =  pPrecioGame.cloneNode();
             clonpPrecioGame.textContent ="$" + juegos[i].precio;
@@ -175,6 +117,7 @@ function actualizarIndex(){
    		lista.removeChild(lista.firstChild);
 } 
 
+//Recibo una categoria y muestro todos los juegos que corresponden esa categoria
 function mostrarCategoria(cat){
     actualizarIndex();
     for( var i=0 ; i<juegos.length ; i++){
@@ -182,14 +125,14 @@ function mostrarCategoria(cat){
             var clonDivGame = divGame.cloneNode();
             contenedor.appendChild(clonDivGame);
             var clonImgGame = imgGame.cloneNode();
-            clonImgGame.src = juegos[i].img;
+            clonImgGame.src = juegos[i].imagen;
             clonDivGame.appendChild(clonImgGame);
         
             var clonDivInfoGame = divInfoGame.cloneNode();
             clonDivGame.appendChild(clonDivInfoGame);
         
             var clonpNameGame =  pNameGame.cloneNode();
-            clonpNameGame.textContent = juegos[i].name;
+            clonpNameGame.textContent = juegos[i].titilo;
             clonDivInfoGame.appendChild(clonpNameGame);
             var clonpPrecioGame =  pPrecioGame.cloneNode();
             clonpPrecioGame.textContent ="$" + juegos[i].precio;
@@ -214,17 +157,14 @@ function capturarBtnComprar(){
     var botones = document.querySelectorAll(".butCompra");
     for (var x = 0; x < botones.length; x++) {
         botones[x].onclick = function() {
-            // window.alert(this.id);
-            var posItem = this.id;
-            // window.alert(posItem);
-            // listaJuegos = obtener_localStorage("listaJuegos");
-            var compra = obtener_localStorage("compra");
+            posItem[0] = this.id;
+            var compra = obtener_sessionStorage("compra");
             if (compra != null){
-                compra = borrar_localStorage('compra');
-                compra = obtener_localStorage('compra');
+                compra = borrar_sessionStorage('compra');
+                compra = obtener_sessionStorage('compra');
             }
             compra.push(posItem);
-            guardar_localStorage(compra, "compra");
+            guardar_sessionStorage(compra, "compra");
             document.location.href= "compra.html";
         }
     }
@@ -232,14 +172,14 @@ function capturarBtnComprar(){
 
 capturarBtnComprar();
 
-//LOCAL STORAGE
+//SESSION STORAGE
 // Recibo la "lista" que quiero gurdar en el local storage y el "nombre" con el que voy a guardar
-function guardar_localStorage(lista, nombre) {
-	localStorage.setItem(nombre, JSON.stringify(lista));
+function guardar_sessionStorage(lista, nombre) {
+	sessionStorage.setItem(nombre, JSON.stringify(lista));
 }
 //
-function obtener_localStorage(clave) {
-	var l = localStorage.getItem(clave);
+function obtener_sessionStorage(clave) {
+	var l = sessionStorage.getItem(clave);
 	if(l == null) {
 		lista = [];
 	}else{
@@ -248,8 +188,8 @@ function obtener_localStorage(clave) {
 	return lista;
 }
 
-function borrar_localStorage(clave){
-    localStorage.removeItem(clave);
+function borrar_sessionStorage(clave){
+    sessionStorage.removeItem(clave);
 }
 
 

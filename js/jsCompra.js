@@ -122,4 +122,4 @@ tipoEnvio.onchange = function(){
 	// infoCostos.appendChild(pMasIVA);
 
 
-	// var juego = [ objjuego1 , obrj2 , hdasshdhdsfhhsdf]
+	// var juego = [ objjuego1 , obrj2 , hdasshdhdsfhhsdf]GFDGFD

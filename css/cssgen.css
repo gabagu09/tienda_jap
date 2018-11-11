@@ -106,7 +106,9 @@ main{
 }
 
 footer{
-    /* border: 2px solid red; */
+    position: relative;;
+   left:0px;
+   bottom:0px;
 }
 
 a{

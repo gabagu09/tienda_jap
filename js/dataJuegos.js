@@ -1,9 +1,9 @@
 var dataJuegos = [
     {   "titulo": "gtaV", //
         "imagen": "image/gta-portada.jpg",
-        "precio" : "12", 
+        "precio" : "57", 
         "descuento" : "10", 
-        "descripcion": "ajdkdgfkd", 
+        "descripcion": "El super GTA V", 
         "categoria": "action",  
         "imgExtra" : []
     },

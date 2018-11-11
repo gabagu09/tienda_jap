@@ -24,7 +24,7 @@
 .ctnMain{
     display: flex;
     flex-flow: wrap;
-    justify-content: center;   
+    justify-content: flex-start;   
 }
 /* footer{
     border: 2px solid red;

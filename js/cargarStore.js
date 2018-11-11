@@ -16,6 +16,7 @@ butCompra.className="butCompra";
 //La primera vez que cargo store muestro todos los juegos
 for( var i=0 ; i<juegos.length ; i++){
     var clonDivGame = divGame.cloneNode();
+    clonDivGame.setAttribute("id", i);
     contenedor.appendChild(clonDivGame);
     var clonImgGame = imgGame.cloneNode();
     clonImgGame.src = juegos[i].imagen;
@@ -54,6 +55,7 @@ promociones.onclick = function(){
     for( var i=0 ; i<juegos.length ; i++){
         if ((juegos[i].descuento !== 0) && (juegos[i].descuento !== "0") ){
             var clonDivGame = divGame.cloneNode();
+            clonDivGame.setAttribute("id", i);
             contenedor.appendChild(clonDivGame);
             var clonImgGame = imgGame.cloneNode();
             clonImgGame.src = juegos[i].imagen;
@@ -123,6 +125,7 @@ function mostrarCategoria(cat){
     for( var i=0 ; i<juegos.length ; i++){
         if (juegos[i].categoria == cat.id){
             var clonDivGame = divGame.cloneNode();
+            clonDivGame.setAttribute("id", i);
             contenedor.appendChild(clonDivGame);
             var clonImgGame = imgGame.cloneNode();
             clonImgGame.src = juegos[i].imagen;
@@ -149,6 +152,7 @@ function mostrarCategoria(cat){
         }
     }
     capturarBtnComprar();
+    capturarBtnGame();
 }
 
 
@@ -169,7 +173,6 @@ function capturarBtnComprar(){
         }
     }
 }
-
 capturarBtnComprar();
 
 //SESSION STORAGE
@@ -193,3 +196,21 @@ function borrar_sessionStorage(clave){
 }
 
 
+// Captura el evento clic sobre algun juego en la store
+function capturarBtnGame(){
+    var games = document.querySelectorAll(".divNiv2");
+    for (var x = 0; x < games.length; x++) {
+        games[x].onclick = function() {
+            posItem[0] = this.id;
+            var compra = obtener_sessionStorage("compra");
+            if (compra != null){
+                compra = borrar_sessionStorage('compra');
+                compra = obtener_sessionStorage('compra');
+            }
+            compra.push(posItem);
+            guardar_sessionStorage(compra, "compra");
+            document.location.href= "game.html";
+        }
+    }
+}
+capturarBtnGame();

@@ -67,11 +67,6 @@ formatoGame.onchange = function(){
 		var dirEnv = document.querySelector('#dirEnvio');
 		dirEnv.setAttribute("required", true);
 		tipo();
-		//
-		// conEnv = calcularAumento(masIVA, 0.5);
-		// conEnv =conEnv.toFixed(2);
-		// pConEnv.textContent = "Precio total +  Envio=  $" + conEnv;
-		// infoCostos.appendChild(pConEnv);
 	}
 	else{
 		datosEnvio.style.display = "none" ;

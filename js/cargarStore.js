@@ -147,7 +147,10 @@ function capturarBtnGame(){
     }
 }
 capturarBtnGame();
+// FIN Captura el evento clic sobre algun juego en la store
 
+
+// Filtrar los juegos por categoria
 var cat = document.querySelector('#cat');
 
 cat.onchange = function(){
@@ -212,4 +215,51 @@ cat.onchange = function(){
         mostrarCategoria(strategy);
         break;
     }
+}
+
+// FIN filtrar los juegos por categoria
+
+var buscador = document.querySelector('#buscador')
+
+buscador.onchange = function(){
+    var tituloBuscar = buscador.value;
+    if (tituloBuscar == ""){
+        actualizarIndex();
+        mostrarTodos();
+    }else{
+        var posJ = posJuego(tituloBuscar);
+        actualizarIndex();
+        if (posJ != -1){
+            mostrarJuego(posJ);
+        }else{
+            var mensaje = document.createElement('p');
+            mensaje.textContent = "No se encontro un Juego con ese nombre";
+            contenedor.appendChild(mensaje);
+        }
+    }
+}
+
+
+
+function mostrarJuego(pos){
+    divGame.setAttribute("id", pos);
+    contenedor.appendChild(divGame);
+
+    imgGame.src = juegos[pos].imagen;
+    divGame.appendChild(imgGame);
+ 
+    divGame.appendChild(divInfoGame);
+
+    pNameGame.textContent = juegos[pos].titulo;
+    divInfoGame.appendChild(pNameGame);
+   
+    pPrecioGame.textContent ="$" + juegos[pos].precio;
+    divInfoGame.appendChild(pPrecioGame);
+    if ((juegos[pos].descuento !== 0) && (juegos[pos].descuento !== "0") ){
+        pDescGame.textContent ="-" + juegos[pos].descuento + "%";
+        divInfoGame.appendChild(pDescGame);
+    }
+    butCompra.textContent ="Comprar";
+    butCompra.setAttribute("id", pos);
+    divInfoGame.appendChild(butCompra);
 }

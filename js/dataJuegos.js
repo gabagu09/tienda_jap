@@ -95,7 +95,7 @@ function posJuego(titulo){
     var encontre = false;
     var i = 0;
     while(!encontre && (i<listaJuegos.length)){
-        if( titulo == listaJuego[i].titulo){
+        if( titulo.toLowerCase() == listaJuegos[i].titulo.toLowerCase()){
              encontre = true;
         }
         else{

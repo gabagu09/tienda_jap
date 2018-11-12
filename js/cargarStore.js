@@ -14,104 +14,37 @@ var butCompra = document.createElement('button');
 butCompra.className="butCompra";
 
 //La primera vez que cargo store muestro todos los juegos
-for( var i=0 ; i<juegos.length ; i++){
-    var clonDivGame = divGame.cloneNode();
-    clonDivGame.setAttribute("id", i);
-    contenedor.appendChild(clonDivGame);
-    var clonImgGame = imgGame.cloneNode();
-    clonImgGame.src = juegos[i].imagen;
-    clonDivGame.appendChild(clonImgGame);
- 
-    var clonDivInfoGame = divInfoGame.cloneNode();
-    clonDivGame.appendChild(clonDivInfoGame);
-
-    var clonpNameGame =  pNameGame.cloneNode();
-    clonpNameGame.textContent = juegos[i].titulo;
-    clonDivInfoGame.appendChild(clonpNameGame);
-    var clonpPrecioGame =  pPrecioGame.cloneNode();
-    clonpPrecioGame.textContent ="$" + juegos[i].precio;
-    clonDivInfoGame.appendChild(clonpPrecioGame);
-    if ((juegos[i].descuento !== 0) && (juegos[i].descuento !== "0") ){
-        var clonpDescGame =  pDescGame.cloneNode();
-        clonpDescGame.textContent ="-" + juegos[i].descuento + "%";
-        clonDivInfoGame.appendChild(clonpDescGame);
-    }
-    var clonButCompra =  butCompra.cloneNode();
-    clonButCompra.textContent ="Comprar";
-    clonButCompra.setAttribute("id", i);
-    clonDivInfoGame.appendChild(clonButCompra);   
-}
-
-var promociones = document.querySelector('#promociones');
-var action = document.querySelector('#action');
-var adventure = document.querySelector('#adventure');
-var sports = document.querySelector('#sports');
-var rpg = document.querySelector('#rpg');
-var shooters = document.querySelector('#shooters');
-var simulation = document.querySelector('#simulation');
-var strategy = document.querySelector('#strategy');
-promociones.onclick = function(){
-    actualizarIndex();
+function mostrarTodos(){
     for( var i=0 ; i<juegos.length ; i++){
+        var clonDivGame = divGame.cloneNode();
+        clonDivGame.setAttribute("id", i);
+        contenedor.appendChild(clonDivGame);
+        var clonImgGame = imgGame.cloneNode();
+        clonImgGame.src = juegos[i].imagen;
+        clonDivGame.appendChild(clonImgGame);
+    
+        var clonDivInfoGame = divInfoGame.cloneNode();
+        clonDivGame.appendChild(clonDivInfoGame);
+
+        var clonpNameGame =  pNameGame.cloneNode();
+        clonpNameGame.textContent = juegos[i].titulo;
+        clonDivInfoGame.appendChild(clonpNameGame);
+        var clonpPrecioGame =  pPrecioGame.cloneNode();
+        clonpPrecioGame.textContent ="$" + juegos[i].precio;
+        clonDivInfoGame.appendChild(clonpPrecioGame);
         if ((juegos[i].descuento !== 0) && (juegos[i].descuento !== "0") ){
-            var clonDivGame = divGame.cloneNode();
-            clonDivGame.setAttribute("id", i);
-            contenedor.appendChild(clonDivGame);
-            var clonImgGame = imgGame.cloneNode();
-            clonImgGame.src = juegos[i].imagen;
-            clonDivGame.appendChild(clonImgGame);
-        
-            var clonDivInfoGame = divInfoGame.cloneNode();
-            clonDivGame.appendChild(clonDivInfoGame);
-        
-            var clonpNameGame =  pNameGame.cloneNode();
-            clonpNameGame.textContent = juegos[i].titulo;
-            clonDivInfoGame.appendChild(clonpNameGame);
-            var clonpPrecioGame =  pPrecioGame.cloneNode();
-            clonpPrecioGame.textContent ="$" + juegos[i].precio;
-            clonDivInfoGame.appendChild(clonpPrecioGame);
-            
-                var clonpDescGame =  pDescGame.cloneNode();
-                clonpDescGame.textContent ="-" + juegos[i].descuento + "%";
-                clonDivInfoGame.appendChild(clonpDescGame);
-        
-            var clonButCompra =  butCompra.cloneNode();
-            clonButCompra.textContent ="Comprar";
-            clonButCompra.setAttribute("id", i);
-            clonDivInfoGame.appendChild(clonButCompra);   
+            var clonpDescGame =  pDescGame.cloneNode();
+            clonpDescGame.textContent ="-" + juegos[i].descuento + "%";
+            clonDivInfoGame.appendChild(clonpDescGame);
         }
+        var clonButCompra =  butCompra.cloneNode();
+        clonButCompra.textContent ="Comprar";
+        clonButCompra.setAttribute("id", i);
+        clonDivInfoGame.appendChild(clonButCompra);   
     }
-    capturarBtnComprar();
 }
+mostrarTodos();
 
-action.onclick = function(){
-  mostrarCategoria(action);
-}
-
-
-adventure.onclick = function(){
-    mostrarCategoria(adventure);
-}
-
-sports.onclick = function(){
-    mostrarCategoria(sports);
-}
-
-rpg.onclick = function(){
-    mostrarCategoria(rpg);
-}
-
-shooters.onclick = function(){
-    mostrarCategoria(shooters);
-}
-
-simulation.onclick = function(){
-    mostrarCategoria(simulation);
-}
-
-strategy.onclick = function(){
-    mostrarCategoria(strategy);
-}
 
 function actualizarIndex(){
 	var lista = document.querySelector(".ctnMain");
@@ -214,3 +147,69 @@ function capturarBtnGame(){
     }
 }
 capturarBtnGame();
+
+var cat = document.querySelector('#cat');
+
+cat.onchange = function(){
+    switch(cat.value){
+        case "Todos":
+        actualizarIndex();
+        mostrarTodos();
+        break;
+    
+    case "Promociones":
+        actualizarIndex();
+        for( var i=0 ; i<juegos.length ; i++){
+            if ((juegos[i].descuento !== 0) && (juegos[i].descuento !== "0") ){
+                var clonDivGame = divGame.cloneNode();
+                clonDivGame.setAttribute("id", i);
+                contenedor.appendChild(clonDivGame);
+                var clonImgGame = imgGame.cloneNode();
+                clonImgGame.src = juegos[i].imagen;
+                clonDivGame.appendChild(clonImgGame);
+            
+                var clonDivInfoGame = divInfoGame.cloneNode();
+                clonDivGame.appendChild(clonDivInfoGame);
+            
+                var clonpNameGame =  pNameGame.cloneNode();
+                clonpNameGame.textContent = juegos[i].titulo;
+                clonDivInfoGame.appendChild(clonpNameGame);
+                var clonpPrecioGame =  pPrecioGame.cloneNode();
+                clonpPrecioGame.textContent ="$" + juegos[i].precio;
+                clonDivInfoGame.appendChild(clonpPrecioGame);
+                
+                    var clonpDescGame =  pDescGame.cloneNode();
+                    clonpDescGame.textContent ="-" + juegos[i].descuento + "%";
+                    clonDivInfoGame.appendChild(clonpDescGame);
+            
+                var clonButCompra =  butCompra.cloneNode();
+                clonButCompra.textContent ="Comprar";
+                clonButCompra.setAttribute("id", i);
+                clonDivInfoGame.appendChild(clonButCompra);   
+            }
+        }
+        capturarBtnComprar();
+        break;
+    case "Action":
+        mostrarCategoria(action);
+        break;
+    case "Adventure":
+        mostrarCategoria(adventure);
+        break;
+    case "Sports & Racing":
+        mostrarCategoria(sports);
+        break;
+    case "RPG":
+        mostrarCategoria(rpg);
+        break;
+    case "Shooters":
+        mostrarCategoria(shooters);
+        break;
+    case "Simulation":
+        mostrarCategoria(simulation);
+        break;
+    case "Strategy":
+        mostrarCategoria(strategy);
+        break;
+    }
+}

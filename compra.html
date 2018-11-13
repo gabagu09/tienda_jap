@@ -13,7 +13,7 @@
     <script src="js/dataJuegos.js"></script>
     
     <!--Cabecera de la pag -->
-     <header>  
+    <header>  
         <nav>
             <ul class="navBar">
                 <!-- <a href="index.html"><li class="niv1"> Main page.</li></a> -->
@@ -53,10 +53,17 @@
             <p>valor</p>
             <p>descuento</p> sd -->
         </div>
+        
         <div class="datosCompra">
             <form action="" method="POST">
-                <label for="cantItems">Cantidad:</label>
-                <input type="number" id="cantItems" min="1" value="1" step="1">
+                <div class="infoComprador">                       
+                    <label for="nombreComprador"> Nombre del Comprador:</label>
+                    <input type="text" id="nombreComprador" required>
+                    <label for="emailComprador"> Email:</label>
+                    <input type="email" id="emailComprador" required>                          
+                </div>
+                <label for="cantItems">Cantidad de Items:</label>
+                <input type="number" id="cantItems" min="1" value="1" step="1" focus>
                 <br>
                 <label for="formatoGame">Formato :</label> 
                 <select name="formatoGame" id="formatoGame">
@@ -80,8 +87,8 @@
                 <label for="formaPago">Forma de Pago :</label>
                 <select name="formaPago" id="formaPago">
                     <option>Debito</option>
-                    <option selected>Credito</option>
-                    <option selected>Red de Cobranza</option>
+                    <option>Credito</option>
+                    <option>Red de Cobranza</option>
                 </select>
                 <br>
                 <!-- <output class="costos"> </output> -->

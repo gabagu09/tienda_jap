@@ -1,15 +1,14 @@
 var juegos = dataJuegos;
 var compra = obtener_sessionStorage("compra");
 
-//Cargar los datos del producto que voy a Comprar
+// Crear Los elementos donde voy a mostrar info sobre el juego que estoy por comprar
 
 var infoGameCompra = document.querySelector('.infoGameCompra');
 var pNameGame = document.createElement('p');
-// var pPrecioGame = document.createElement('p');
 var pDescGame = document.createElement('p');
 var pPrecioUnidad = document.createElement('p');
 
-// Cargar 
+// Crear Los elementos de la tabla donde voy a mostrar la info de la compra
 var tabla = document.querySelector('table');
 var tdValorUnidad = document.createElement('td');
 var tdValorCompra = document.createElement('td');
@@ -21,22 +20,6 @@ var fila = document.createElement('tr');
 
 tabla.appendChild(fila);
 
-tdValorUnidad.textContent = juegos[compra[0]].precio
-fila.appendChild(tdValorUnidad);
-tdValorCompra.textContent = juegos[compra[0]].precio
-fila.appendChild(tdValorCompra);
-tdValorDescuentos.textContent = calcularDescuento(juegos[compra[0]].precio, juegos[compra[0]].descuento)
-fila.appendChild(tdValorDescuentos);
-
-tdValorImpuestos.textContent = calcularMasIVA(calcularDescuento(juegos[compra[0]].precio, juegos[compra[0]].descuento)).toFixed(2);
-fila.appendChild(tdValorImpuestos);
-
-tdValorEnvio.textContent = "No corresponde";
-fila.appendChild(tdValorEnvio);
-
-tdValorTotal.textContent = calcularMasIVA(calcularDescuento(juegos[compra[0]].precio, juegos[compra[0]].descuento)).toFixed(2);
-fila.appendChild(tdValorTotal);
-
 if (compra.length != 0){
 	pNameGame.textContent = "Titulo: "+ " " + juegos[compra[0]].titulo;
 	infoGameCompra.appendChild(pNameGame);
@@ -46,12 +29,29 @@ if (compra.length != 0){
     	pDescGame.textContent = "El SUPER Descuento "+"-"+ juegos[compra[0]].descuento +"%";
     	infoGameCompra.appendChild(pDescGame);
 	}
+
+	tdValorUnidad.textContent = juegos[compra[0]].precio
+	fila.appendChild(tdValorUnidad);
+	tdValorCompra.textContent = juegos[compra[0]].precio;
+	fila.appendChild(tdValorCompra);
+	tdValorDescuentos.textContent = calcularDescuento(juegos[compra[0]].precio, juegos[compra[0]].descuento)
+	fila.appendChild(tdValorDescuentos);
+
+	tdValorImpuestos.textContent = calcularMasIVA(calcularDescuento(juegos[compra[0]].precio, juegos[compra[0]].descuento)).toFixed(2);
+	fila.appendChild(tdValorImpuestos);
+
+	tdValorEnvio.textContent = "No corresponde";
+	fila.appendChild(tdValorEnvio);
+
+	tdValorTotal.textContent = calcularMasIVA(calcularDescuento(juegos[compra[0]].precio, juegos[compra[0]].descuento)).toFixed(2);
+	fila.appendChild(tdValorTotal);
 }
 else{
 	var mensaje = document.createElement('p');
 	mensaje.textContent = "Su compra fue cancelada con exito";
     infoGameCompra.appendChild(mensaje);
-    document.location.href= "store.html";
+	document.location.href= "store.html";
+	tabla.removeChild(fila);
 }
 
 // FIN Cargar los datos del producto que voy a Comprar
@@ -59,20 +59,14 @@ else{
 var cancelar = document.querySelector('.cancelar');
 cancelar.onclick = function (){
 	sessionStorage.removeItem('compra');
-	// document.location.href= "store.html";
 }
 
 // MOSTRAR EL VALOR DE LA COMPRA
-var pPrecioGame = document.createElement('p');
+
 var inputCantJuegos = document.querySelector('#cantItems');
 var cantJuegos = inputCantJuegos.value;
 var preSumaItems = Number(juegos[compra[0]].precio) * cantJuegos;
-pPrecioGame.textContent = "Valor por " + cantJuegos + " unidad/es con descuento: " + " " +"$" + calcularDescuento(preSumaItems,juegos[compra[0]].descuento) ;
-infoGameCompra.appendChild(pPrecioGame);
-
 var preSumaItemsDescuentoIva = calcularMasIVA(calcularDescuento(juegos[compra[0]].precio, juegos[compra[0]].descuento)).toFixed(2)
-
-
 
 
 // Se asocia la funcion mostrarPrecio a eventos en inputCantJuegos
@@ -85,42 +79,43 @@ function mostrarPrecio(){
 	cantJuegos = inputCantJuegos.value;
 	preSumaItems = Number(precio(compra[0])) * cantJuegos;
 
-	pPrecioGame.textContent = "Valor por " + cantJuegos + " unidad/es con descuento: " + " " +"$" + calcularDescuento(preSumaItems,juegos[compra[0]].descuento);
 	tdValorCompra.textContent = preSumaItems; 
 
-	var preSumaItemsDescuento = calcularDescuento(preSumaItems,juegos[compra[0]].descuento)
+	var preSumaItemsDescuento = calcularDescuento(preSumaItems,juegos[compra[0]].descuento).toFixed(2);
 	tdValorDescuentos.textContent = preSumaItemsDescuento;
 
-	var preSumaItemsDescuentoIva = calcularMasIVA(preSumaItemsDescuento);
+	var preSumaItemsDescuentoIva = calcularMasIVA(preSumaItemsDescuento).toFixed(2);
 	tdValorImpuestos.textContent =preSumaItemsDescuentoIva;
 
 	tdValorTotal.textContent =preSumaItemsDescuentoIva;
 
 	tipo(preSumaItemsDescuentoIva,cantJuegos); ////
 }
+
 // FIN MOSTRAR EL VALOR DE LA COMPRA
 
 
 
 //Formto del Juego
 var infoCostos = document.querySelector('.infoCostos');
-var pConEnv = document.createElement('p');
 var conEnv;
 var inputFormatoGame = document.querySelector('#formatoGame');
 var datosEnvio = document.querySelector('.datosEnvio');
+var dirEnv = document.querySelector('#dirEnvio');
 
 inputFormatoGame.onchange = function(){
 	if (formatoGame.value == "CD/DVD"){
 		datosEnvio.style.display = "block";
-		var dirEnv = document.querySelector('#dirEnvio');
+		
 		dirEnv.setAttribute("required", true);
 		tipo(preSumaItemsDescuentoIva, inputCantJuegos.value);
 	}
 	else{
+		
+		dirEnv.setAttribute("required", false);
 		datosEnvio.style.display = "none";
 		tdValorEnvio.textContent = "No corresponde";
 		mostrarPrecio();
-		infoCostos.removeChild(pConEnv);
 	}
 }
 
@@ -134,35 +129,24 @@ function tipo(subTotal, cantidad){
 	preSumaItems = Number(precio(compra[0])) * cantidad;
 	var preSumaItemsDescuento = calcularDescuento(preSumaItems,juegos[compra[0]].descuento)
 	var preSumaItemsDescuentoIva = calcularMasIVA(preSumaItemsDescuento);
-	// if(subTotal == -1){
-		subTotal = preSumaItemsDescuentoIva;
-	// }
+	subTotal = preSumaItemsDescuentoIva;
 	var conEnv;
 	if(datosEnvio.style.display == "block"){
 		if (tipoEnvio.value == "comun + 0,5%"){
-			// mostrarPrecio();
-
 			conEnv = calcularAumento(subTotal, 0.5);
 			conEnv =conEnv.toFixed(2);
-			pConEnv.textContent = "Precio total +  Envio=  $" + conEnv;
-
 			tdValorEnvio.textContent = conEnv;
 		}
 		else if (tipoEnvio.value == "especial + 2%"){
-			// mostrarPrecio();
 			conEnv = calcularAumento(subTotal, 2);
 			conEnv =conEnv.toFixed(2);
-			pConEnv.textContent = "Precio total +  Envio=  $" + conEnv;
 			tdValorEnvio.textContent = conEnv;
 		}
 		else{
-			// mostrarPrecio();
 			conEnv = calcularAumento(subTotal, 5);
 			conEnv =conEnv.toFixed(2);
-			pConEnv.textContent = "Precio total +  Envio=  $" +  conEnv;
 			tdValorEnvio.textContent = conEnv;
 		}
-		infoCostos.appendChild(pConEnv);
 		tdValorTotal.textContent = conEnv;
 	}
 }
@@ -181,10 +165,6 @@ function calcularAumento(valor, aumento){
 function calcularMasIVA(valor){
 	return Number(valor) + (Number(valor) * (22 / 100))
 }
-
-
-
-
 
 
 

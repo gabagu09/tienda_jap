@@ -93,57 +93,65 @@ function mostrarCategoria(cat){
 function capturarBtnComprar(){
     var botones = document.querySelectorAll(".butCompra");
     for (var x = 0; x < botones.length; x++) {
-        botones[x].onclick = function() {
-            posItem[0] = this.id;
-            var compra = obtener_sessionStorage("compra");
-            if (compra != null){
-                compra = borrar_sessionStorage('compra');
-                compra = obtener_sessionStorage('compra');
-            }
-            compra.push(posItem);
-            guardar_sessionStorage(compra, "compra");
-            document.location.href= "compra.html";
-        }
+        botones[x].addEventListener('click', capturaBoton);
+        // function capt() {
+        //     posItem[0] = this.id;
+        //     var compra = obtener_sessionStorage("compra");
+        //     if (compra != null){
+        //         compra = borrar_sessionStorage('compra');
+        //         compra = obtener_sessionStorage('compra');
+        //     }
+        //     compra.push(posItem);
+        //     guardar_sessionStorage(compra, "compra");
+        //     document.location.href= "compra.html";
+        // }
     }
 }
 capturarBtnComprar();
 
-//SESSION STORAGE
-// Recibo la "lista" que quiero gurdar en el local storage y el "nombre" con el que voy a guardar
-function guardar_sessionStorage(lista, nombre) {
-	sessionStorage.setItem(nombre, JSON.stringify(lista));
-}
-//
-function obtener_sessionStorage(clave) {
-	var l = sessionStorage.getItem(clave);
-	if(l == null) {
-		lista = [];
-	}else{
-		lista = JSON.parse(l);
-	}
-	return lista;
+
+function capturaBoton(e) {
+    posItem[0] = this.id;
+    var compra = obtener_sessionStorage("compra");
+    if (compra != null){
+        compra = borrar_sessionStorage('compra');
+        compra = obtener_sessionStorage('compra');
+    }
+    compra.push(posItem);
+    guardar_sessionStorage(compra, "compra");
+    document.location.href= "compra.html";
+    e.stopPropagation();
 }
 
-function borrar_sessionStorage(clave){
-    sessionStorage.removeItem(clave);
+function capturaDiv() {
+    posItem[0] = this.id;
+    var compra = obtener_sessionStorage("compra");
+    if (compra != null){
+        compra = borrar_sessionStorage('compra');
+        compra = obtener_sessionStorage('compra');
+    }
+    compra.push(posItem);
+    guardar_sessionStorage(compra, "compra");
+    document.location.href= "game.html";
+    
 }
-
 
 // Captura el evento clic sobre algun juego en la store
 function capturarBtnGame(){
     var games = document.querySelectorAll(".divNiv2");
     for (var x = 0; x < games.length; x++) {
-        games[x].onclick = function() {
-            posItem[0] = this.id;
-            var compra = obtener_sessionStorage("compra");
-            if (compra != null){
-                compra = borrar_sessionStorage('compra');
-                compra = obtener_sessionStorage('compra');
-            }
-            compra.push(posItem);
-            guardar_sessionStorage(compra, "compra");
-            document.location.href= "game.html";
-        }
+        games[x].addEventListener('click', capturaDiv, false);
+        // function captu() {
+        //     posItem[0] = this.id;
+        //     var compra = obtener_sessionStorage("compra");
+        //     if (compra != null){
+        //         compra = borrar_sessionStorage('compra');
+        //         compra = obtener_sessionStorage('compra');
+        //     }
+        //     compra.push(posItem);
+        //     guardar_sessionStorage(compra, "compra");
+        //     document.location.href= "game.html";
+        // }
     }
     
 }
@@ -193,6 +201,7 @@ cat.onchange = function(){
             }
         }
         capturarBtnComprar();
+        capturarBtnGame();
         break;
     case "Action":
         mostrarCategoria(action);
@@ -238,6 +247,8 @@ buscador.onchange = function(){
             contenedor.appendChild(mensaje);
         }
     }
+    capturarBtnComprar();
+    capturarBtnGame();
 }
 
 
@@ -263,4 +274,26 @@ function mostrarJuego(pos){
     butCompra.textContent ="Comprar";
     butCompra.setAttribute("id", pos);
     divInfoGame.appendChild(butCompra);
+}
+
+
+
+//SESSION STORAGE
+// Recibo la "lista" que quiero gurdar en el local storage y el "nombre" con el que voy a guardar
+function guardar_sessionStorage(lista, nombre) {
+	sessionStorage.setItem(nombre, JSON.stringify(lista));
+}
+//
+function obtener_sessionStorage(clave) {
+	var l = sessionStorage.getItem(clave);
+	if(l == null) {
+		lista = [];
+	}else{
+		lista = JSON.parse(l);
+	}
+	return lista;
+}
+
+function borrar_sessionStorage(clave){
+    sessionStorage.removeItem(clave);
 }

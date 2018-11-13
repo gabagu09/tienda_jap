@@ -145,6 +145,7 @@ function capturarBtnGame(){
             document.location.href= "game.html";
         }
     }
+    
 }
 capturarBtnGame();
 // FIN Captura el evento clic sobre algun juego en la store

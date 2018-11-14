@@ -94,17 +94,6 @@ function capturarBtnComprar(){
     var botones = document.querySelectorAll(".butCompra");
     for (var x = 0; x < botones.length; x++) {
         botones[x].addEventListener('click', capturaBoton);
-        // function capt() {
-        //     posItem[0] = this.id;
-        //     var compra = obtener_sessionStorage("compra");
-        //     if (compra != null){
-        //         compra = borrar_sessionStorage('compra');
-        //         compra = obtener_sessionStorage('compra');
-        //     }
-        //     compra.push(posItem);
-        //     guardar_sessionStorage(compra, "compra");
-        //     document.location.href= "compra.html";
-        // }
     }
 }
 capturarBtnComprar();
@@ -141,17 +130,7 @@ function capturarBtnGame(){
     var games = document.querySelectorAll(".divNiv2");
     for (var x = 0; x < games.length; x++) {
         games[x].addEventListener('click', capturaDiv, false);
-        // function captu() {
-        //     posItem[0] = this.id;
-        //     var compra = obtener_sessionStorage("compra");
-        //     if (compra != null){
-        //         compra = borrar_sessionStorage('compra');
-        //         compra = obtener_sessionStorage('compra');
-        //     }
-        //     compra.push(posItem);
-        //     guardar_sessionStorage(compra, "compra");
-        //     document.location.href= "game.html";
-        // }
+        
     }
     
 }

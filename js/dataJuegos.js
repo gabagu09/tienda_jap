@@ -116,4 +116,5 @@ function precio(posJuego){
 }
 
 
-var posItem=[];
+// var posItemData;
+// alert(posItemData + "dataJuego");

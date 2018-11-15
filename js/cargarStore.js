@@ -68,7 +68,7 @@ function mostrarCategoria(cat){
             clonDivGame.appendChild(clonDivInfoGame);
         
             var clonpNameGame =  pNameGame.cloneNode();
-            clonpNameGame.textContent = juegos[i].titilo;
+            clonpNameGame.textContent = juegos[i].titulo;
             clonDivInfoGame.appendChild(clonpNameGame);
             var clonpPrecioGame =  pPrecioGame.cloneNode();
             clonpPrecioGame.textContent ="$" + juegos[i].precio;
@@ -98,9 +98,9 @@ function capturarBtnComprar(){
 }
 capturarBtnComprar();
 
-
+var posItem;
 function capturaBoton(e) {
-    posItem[0] = this.id;
+    posItem = this.id;
     var compra = obtener_sessionStorage("compra");
     if (compra != null){
         compra = borrar_sessionStorage('compra');
@@ -113,7 +113,7 @@ function capturaBoton(e) {
 }
 
 function capturaDiv() {
-    posItem[0] = this.id;
+    posItem = this.id;
     var compra = obtener_sessionStorage("compra");
     if (compra != null){
         compra = borrar_sessionStorage('compra');
@@ -276,3 +276,7 @@ function obtener_sessionStorage(clave) {
 function borrar_sessionStorage(clave){
     sessionStorage.removeItem(clave);
 }
+
+
+// posItemData = 1;
+// alert(posItemData + "cargarStore");

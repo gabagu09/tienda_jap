@@ -183,3 +183,5 @@ function obtener_sessionStorage(clave) {
 	}
 	return lista;
 }
+
+// alert(posItemData + "cargarCompra");

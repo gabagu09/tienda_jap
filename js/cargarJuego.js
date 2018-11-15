@@ -43,9 +43,11 @@ butCompra.className="butCompra";
 butCompra.setAttribute("id", compra[0]);
 infoGame.appendChild(butCompra); 
 
+var posItem;
+
 var capturabutCompra = document.querySelector('.butCompra');
 capturabutCompra.onclick = function(){
-	posItem[0] = this.id;
+	posItem = this.id;
 	var compra = obtener_sessionStorage("compra");
 	if (compra != null){
 		compra = borrar_sessionStorage('compra');

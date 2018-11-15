@@ -1,11 +1,11 @@
 var dataJuegos = [
-    {   "titulo": "gtaV", //
+    {   "titulo": "gta V", //
         "imagen": "image/gta-portada.jpg",
         "precio" : "57", 
         "descuento" : "10", 
         "descripcion": "El super GTA V", 
         "categoria": "action",  
-        "imgExtra" : []
+        "imgExtra" : ["image/150.png", "image/150.png", "image/150.png"]
     },
     {   "titulo": "Fornite",
         "imagen": "image/Fornite.jpg",
@@ -13,7 +13,7 @@ var dataJuegos = [
         "descuento" : "10",
         "descripcion": "ajdkdgfkd",
         "categoria": "action",
-        "imgExtra" : []
+        "imgExtra" : ["image/150.png", "image/150.png", "image/150.png"]
     },
     {   "titulo": "Minecraft",
         "imagen": "image/minecraft.jpg",
@@ -21,7 +21,7 @@ var dataJuegos = [
         "descuento" : "10",
         "descripcion": "ajdkdgfkd",
         "categoria": "adventure",
-        "imgExtra" : []
+        "imgExtra" : ["image/150.png", "image/150.png", "image/150.png"]
     },
     {   "titulo": "Fifa 19",
         "imagen": "image/Fifa19.jpg",
@@ -29,7 +29,7 @@ var dataJuegos = [
         "descuento" : "10",
         "descripcion": "ajdkdgfkd",
         "categoria": "sports",
-        "imgExtra" : []
+        "imgExtra" : ["image/150.png", "image/150.png", "image/150.png"]
     },
     {   "titulo": "Pes 19",
         "imagen": "image/Pes19.jpg",
@@ -37,7 +37,7 @@ var dataJuegos = [
         "descuento" : "10",
         "descripcion": "ajdkdgfkd",
         "categoria": "sports",
-        "imgExtra" : []
+        "imgExtra" : ["image/150.png", "image/150.png", "image/150.png"]
     }, 
     {   "titulo": "The Forest",
         "imagen": "image/TheForest.jpg",
@@ -45,7 +45,7 @@ var dataJuegos = [
         "descuento" : "0",
         "descripcion": "ajdkdgfkd",
         "categoria": "adventure",
-        "imgExtra" : []
+        "imgExtra" : ["image/150.png", "image/150.png", "image/150.png"]
     },
     {   "titulo": "The Witcher 3",
         "imagen": "image/theWitcher3.jpg",
@@ -53,7 +53,7 @@ var dataJuegos = [
         "descuento" : "0",
         "descripcion": "ajdkdgfkd",
         "categoria": "rpg",
-        "imgExtra" : []
+        "imgExtra" : ["image/150.png", "image/150.png", "image/150.png"]
     },
     {   "titulo": "Call of Duty",
         "imagen": "image/CallOfDuty.jpeg",
@@ -61,7 +61,7 @@ var dataJuegos = [
         "descuento" : "15",
         "descripcion": "ajdkdgfkd",
         "categoria": "shooters",
-        "imgExtra" : []
+        "imgExtra" : ["image/150.png", "image/150.png", "image/150.png"]
     },
     {   "titulo": "Counter Strike Go",
         "imagen": "image/cs-go-2.jpg",
@@ -69,7 +69,7 @@ var dataJuegos = [
         "descuento" : "7",
         "descripcion": "ajdkdgfkd",
         "categoria": "shooters",
-        "imgExtra" : []
+        "imgExtra" : ["image/150.png", "image/150.png", "image/150.png"]
     },
 ]
 

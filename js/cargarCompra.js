@@ -56,6 +56,7 @@ else{
 
 // FIN Cargar los datos del producto que voy a Comprar
 
+
 var cancelar = document.querySelector('.cancelar');
 cancelar.onclick = function (){
 	sessionStorage.removeItem('compra');
@@ -154,6 +155,17 @@ function tipo(subTotal, cantidad){
 // FIN Calcular el Valor de la compra con el tipo de envio
 
 
+var formulario = document.querySelector("#formCompra");
+formulario.onsubmit = function(){
+	alert("la compra fue realizada con exito");
+	sessionStorage.removeItem('compra');
+	// document.location.href= "store.html";
+
+}
+
+
+
+// Funciones aux
 function calcularDescuento(valor, descuento){
 	return Number(valor) - (Number(valor) * (descuento / 100));
 }
@@ -165,6 +177,7 @@ function calcularAumento(valor, aumento){
 function calcularMasIVA(valor){
 	return Number(valor) + (Number(valor) * (22 / 100))
 }
+
 
 
 

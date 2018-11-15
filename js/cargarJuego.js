@@ -60,6 +60,28 @@ capturabutCompra.onclick = function(){
 // Fin Boton de Compra
 
 
+// CARGAR iMAGENES EXTRA 
+
+var divImagenesExtra = document.querySelector('.imagenesExtra');
+var imagenExtra = document.createElement('img');
+
+var listaImagenesExtra = juegos[compra[0]].imgExtra;
+
+function mostrarImagenesExtra(){
+    for( var i=0 ; i<listaImagenesExtra.length ; i++){
+        var clonImagenExtra = imagenExtra.cloneNode();
+		// clonImagenExtra.setAttribute("src", listaImagenesExtra[i]);
+		// clonImagenExtra.setAttribute("class", 'imgExt');
+		clonImagenExtra.src = listaImagenesExtra[i];
+		clonImagenExtra.className = "imgExt";
+        divImagenesExtra.appendChild(clonImagenExtra);		
+	}
+}
+
+mostrarImagenesExtra();
+
+// FIN CARGAR iMAGENES EXTRA 
+
 
 //SESSION STORAGE
 // Recibo la "lista" que quiero gurdar en el local storage y el "nombre" con el que voy a guardar

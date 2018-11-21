@@ -108,7 +108,7 @@ function capturaBoton(e) {
     }
     compra.push(posItem);
     guardar_sessionStorage(compra, "compra");
-    document.location.href= "compra.html";
+    document.location.href= "pages/compra.html";
     e.stopPropagation();
 }
 
@@ -121,7 +121,7 @@ function capturaDiv() {
     }
     compra.push(posItem);
     guardar_sessionStorage(compra, "compra");
-    document.location.href= "game.html";
+    document.location.href= "pages/game.html";
     
 }
 

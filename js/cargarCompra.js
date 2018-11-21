@@ -50,7 +50,7 @@ else{
 	var mensaje = document.createElement('p');
 	mensaje.textContent = "Su compra fue cancelada con exito";
     infoGameCompra.appendChild(mensaje);
-	document.location.href= "store.html";
+	document.location.href= "../store.html";
 	tabla.removeChild(fila);
 }
 

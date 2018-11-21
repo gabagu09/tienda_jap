@@ -5,7 +5,7 @@ var compra = obtener_sessionStorage("compra");
 // Mostrar la imagen de portada del juego
 var contImagen = document.querySelector('.imagegame');
 var imagen = document.createElement('img');
-imagen.setAttribute('src',juegos[compra[0]].imagen);
+imagen.setAttribute('src', "../" + juegos[compra[0]].imagen);
 contImagen.appendChild(imagen);
 // FIN Mostrar la imagen de portada del juego
 
@@ -72,7 +72,7 @@ function mostrarImagenesExtra(){
         var clonImagenExtra = imagenExtra.cloneNode();
 		// clonImagenExtra.setAttribute("src", listaImagenesExtra[i]);
 		// clonImagenExtra.setAttribute("class", 'imgExt');
-		clonImagenExtra.src = listaImagenesExtra[i];
+		clonImagenExtra.src = "../" + listaImagenesExtra[i];
 		clonImagenExtra.className = "imgExt";
         divImagenesExtra.appendChild(clonImagenExtra);		
 	}

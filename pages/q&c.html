@@ -4,22 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/cssgen.css" type="text/css">
-    <link rel="stylesheet" href="css/cssform.css" type="text/css">
-    <title>Sign-in</title>
+    <link rel="stylesheet" href="../css/cssgen.css" type="text/css">
+    <link rel="stylesheet" href="../css/cssform.css" type="text/css">
+    <title>Q&amp;C</title>
 </head>
 <body>
-
+    
     <header> <!--Cabecera de la pag -->
 
         <nav>
             <ul class="navBar">
-                <a href="store.html"><li class="niv1">  Store </li></a>
+                <a href="../store.html"><li class="niv1">  Store </li></a>
                 
                 <li class="niv1">Community
                     
                 </li>
-
+                
                 <li class="niv1">
 
                 </li>
@@ -40,36 +40,45 @@
             </ul>
         </nav>
         
+
+        <!-- <form id="searcHead">
+            <input type="search" id="search">
+        </form> -->
+      
+        
         <h1>GoG.com</h1>
-       
+        
+        
     </header>
-   
 <hr>
+
     <main>
-        <!-- Form de registro -->
         
-        
-        
+        <!-- Form para dejar comentarios -->
         <div class="contForm">
-            <form id="formSignIn">
-                <h2>Iniciar sesión</h2>
-                <label for="mail">Email:</label><br>
-                <input type="email" name="mail" id="mail" autofocus required>
-                <br><br>
-                <label for="pass">Contraseña:</label><br>
-                <input type="password" name="pass" id="pass" required>
-                <br><br>
-                <input type="submit" value="LogIn">
+            <form>
+                <h2> Q&amp;C</h2> 
+            <label for="mail">Email: *</label>
+            <br>
+            <input type="email" name="mail" id="mail" required>
+            <br><br>
+            <label for="name">Nombre:</label>
+            <br>           
+            <input type="text" name="name" id="name" maxlength="30">
+            <br><br>
+            <label for="com">Dejanos tu consulta o comentario: *</label>
+            <br>
+            <textarea cols="36" rows="10" required id="com" autofocus></textarea>
+    
+            <br><br>
+            <input type="submit" value="Enviar">
             </form>
         </div>
-        <script src="js/usuariosLogin.js"></script>
     </main>
-    <hr>
- 
-<footer>
-    <h4>By yo</h4>
-    
-</footer>
- 
+<hr>    
+    <footer>
+        <h4>By yo</h4>
+       
+    </footer>
 </body>
 </html>

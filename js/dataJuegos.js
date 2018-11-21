@@ -5,7 +5,7 @@ var dataJuegos = [
         "descuento" : "10", 
         "descripcion": "El super GTA V", 
         "categoria": "action",  
-        "imgExtra" : ["image/150.png", "image/150.png", "image/150.png"]
+        "imgExtra" : ["image/gtaV-1.jpg", "image/gtaV-2.jpg", "image/150.png"]
     },
     {   "titulo": "Fornite",
         "imagen": "image/Fornite.jpg",
@@ -69,7 +69,7 @@ var dataJuegos = [
         "descuento" : "7",
         "descripcion": "ajdkdgfkd",
         "categoria": "shooters",
-        "imgExtra" : ["image/150.png", "image/150.png", "image/150.png"]
+        "imgExtra" : ["image/cs-go-1.jpg", "image/150.png", "image/150.png"]
     },
 ]
 
